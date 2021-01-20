@@ -16,7 +16,7 @@ namespace CalculatorTests
 
 		public static int Multiply(int x, int y)
 		{
-			return 0;
+			return x * y;
 		}
 		
 		static void Main(string[] args)
