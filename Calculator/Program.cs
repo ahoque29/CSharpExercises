@@ -21,7 +21,15 @@ namespace CalculatorTests
 
 		public static int Divide(int x, int y)
 		{
-			return x / y;
+			try
+			{
+				return x / y;
+			}
+			catch (DivideByZeroException)
+			{
+				Console.WriteLine("Cannot Divide by 0.");
+				return 0;
+			}
 		}
 		
 		static void Main(string[] args)

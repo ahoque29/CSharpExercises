@@ -35,6 +35,10 @@ namespace CalculatorTests
 
 		[TestCase(10, 5, 2)]
 		[TestCase(9, 2, 4)]
+		[TestCase(-8, 2, -4)]
+		[TestCase(-4, -2, 2)]
+		[TestCase(20, -10, -2)]
+		[TestCase(23, 0, 0)]
 		public void DivisionIsCorrect(int a, int b, int expectedResult)
 		{
 			var result = Program.Divide(a, b);
