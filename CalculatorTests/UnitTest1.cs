@@ -9,10 +9,11 @@ namespace CalculatorTests
 		{
 		}
 
-		[Test]
-		public void Test1()
+		[TestCase(2, 3, 5)]
+		public void AddIsCorrect(int a, int b, int expectedResult)
 		{
-			Assert.Pass();
+			var result = Program.Add(a, b);
+			Assert.AreEqual(expectedResult, result);
 		}
 	}
 }
