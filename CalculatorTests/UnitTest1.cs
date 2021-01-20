@@ -46,6 +46,8 @@ namespace CalculatorTests
 		}
 
 		[TestCase(3, 2, 1)]
+		[TestCase(-9, 4, -1)]
+		[TestCase(3, 0, -999)]
 		public void ModulusIsCorrect(int a, int b, int expectedResult)
 		{
 			var result = Program.Modulus(a, b);
