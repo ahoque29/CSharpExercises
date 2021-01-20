@@ -24,5 +24,13 @@ namespace CalculatorTests
 			var result = Program.Subtract(a, b);
 			Assert.AreEqual(expectedResult, result);
 		}
+
+		[TestCase(5, 10, 50)]
+		[TestCase(7, 3, 21)]
+		public void MultiplyIsCorrect(int a, int b, int expectedResult)
+		{
+			var result = Program.Multiply(a, b);
+			Assert.AreEqual(expectedResult, result);
+		}
 	}
 }
