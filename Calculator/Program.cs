@@ -34,7 +34,7 @@ namespace CalculatorTests
 
 		public static int Modulus(int x, int y)
 		{
-			return 0;
+			return x % y;
 		}
 		
 		static void Main(string[] args)
