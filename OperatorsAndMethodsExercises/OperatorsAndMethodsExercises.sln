@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorsAndMethodsExercisesTests", "OperatorsAndMethodsExercisesTests\OperatorsAndMethodsExercisesTests.csproj", "{2144CCC8-D527-48EA-929A-DF9EE63B6312}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorAndMethodsExercisesLib", "OperatorAndMethodsExercisesLib\OperatorAndMethodsExercisesLib.csproj", "{F932BAEA-DDEF-47DE-8F54-5060EA4E1484}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2144CCC8-D527-48EA-929A-DF9EE63B6312}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2144CCC8-D527-48EA-929A-DF9EE63B6312}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2144CCC8-D527-48EA-929A-DF9EE63B6312}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2144CCC8-D527-48EA-929A-DF9EE63B6312}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F932BAEA-DDEF-47DE-8F54-5060EA4E1484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F932BAEA-DDEF-47DE-8F54-5060EA4E1484}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F932BAEA-DDEF-47DE-8F54-5060EA4E1484}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F932BAEA-DDEF-47DE-8F54-5060EA4E1484}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6BF91B2-5AB5-490A-B060-38AA2C1560EE}
+	EndGlobalSection
+EndGlobal
