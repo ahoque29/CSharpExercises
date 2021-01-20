@@ -32,5 +32,13 @@ namespace CalculatorTests
 			var result = Program.Multiply(a, b);
 			Assert.AreEqual(expectedResult, result);
 		}
+
+		[TestCase(10, 5, 2)]
+		[TestCase(9, 2, 4)]
+		public void DivisionIsCorrect(int a, int b, int expectedResult)
+		{
+			var result = Program.Divide(a, b);
+			Assert.AreEqual(expectedResult, result);
+		}
 	}
 }
