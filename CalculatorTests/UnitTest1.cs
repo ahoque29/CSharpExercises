@@ -10,6 +10,7 @@ namespace CalculatorTests
 		}
 
 		[TestCase(2, 3, 5)]
+		[TestCase(5, 10, 15)]
 		public void AddIsCorrect(int a, int b, int expectedResult)
 		{
 			var result = Program.Add(a, b);
