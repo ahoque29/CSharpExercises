@@ -16,5 +16,13 @@ namespace CalculatorTests
 			var result = Program.Add(a, b);
 			Assert.AreEqual(expectedResult, result);
 		}
+
+		[TestCase(5, 10, -5)]
+		[TestCase(23, 3, 20)]
+		public void SubtractIsCorrect(int a, int b, int expectedResult)
+		{
+			var result = Program.Subtract(a, b);
+			Assert.AreEqual(expectedResult, result);
+		}
 	}
 }

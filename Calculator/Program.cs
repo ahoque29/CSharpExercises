@@ -8,6 +8,11 @@ namespace CalculatorTests
 		{
 			return x + y;
 		}
+
+		public static int Subtract(int x, int y)
+		{
+			return 0;
+		}
 		
 		static void Main(string[] args)
 		{
