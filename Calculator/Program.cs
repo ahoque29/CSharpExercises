@@ -31,6 +31,11 @@ namespace CalculatorTests
 				return 0;
 			}
 		}
+
+		public static int Modulus(int x, int y)
+		{
+			return 0;
+		}
 		
 		static void Main(string[] args)
 		{

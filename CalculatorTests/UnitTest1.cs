@@ -44,5 +44,12 @@ namespace CalculatorTests
 			var result = Program.Divide(a, b);
 			Assert.AreEqual(expectedResult, result);
 		}
+
+		[TestCase(3, 2, 1)]
+		public void ModulusIsCorrect(int a, int b, int expectedResult)
+		{
+			var result = Program.Modulus(a, b);
+			Assert.AreEqual(expectedResult, result);
+		}
 	}
 }
