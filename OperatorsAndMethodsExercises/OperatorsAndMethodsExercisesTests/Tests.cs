@@ -14,19 +14,22 @@ namespace OperatorsAndMethodsExercisesTests
         {
             Assert.AreEqual(expResult, Methods.GreaterEqual(x, y));
         }
+
         [TestCase(11, 0)]
-        [TestCase(12,1)]
+        [TestCase(12, 1)]
         [TestCase(27, 2)]
         [TestCase(0, 0)]
+        //[TestCase(0.5, System.ArgumentException)]
         public void GivenANumberOfEggs_Dozens_ReturnsTheNumberOfDozens(int numEggs, int expResult)
         {
             Assert.AreEqual(expResult, Methods.Dozens(numEggs));
         }
+
         [TestCase(0, 10.429)]
         [TestCase(10, 24.714)]
         public void GivenNumber_BODMAS_ReturnsTheExpectedResult(int num, double expResult)
         {
-            Assert.AreEqual(expResult, Methods.BODMAS(num));
+            Assert.AreEqual(expResult, Methods.BODMAS(num), 3);
         }
 
         [TestCase(3, 4, 7, 12)]
