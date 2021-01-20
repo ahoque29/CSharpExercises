@@ -14,6 +14,7 @@ namespace ArraysAndStringsTests
             var result = Exercises.Address(number, street, city, postcode);
             Assert.AreEqual(expAddress, result);
         }
+
         [TestCase(33, 40, "You got 33 out of 40: 82.5%")]
         [TestCase(18, 65, "You got 18 out of 65: 27.7%")]
         public void GivenATestScore_Scorer_ReturnsAFormattedString(int score, int outOf, string expString)
@@ -21,11 +22,13 @@ namespace ArraysAndStringsTests
             var result = Exercises.Scorer(score, outOf);
             Assert.AreEqual(expString, result);
         }
+
         [Test]
         public void GivenAString_ParseNum_ReturnsTheDoubleRepresentedByTheString()
         {
             Assert.AreEqual(3.14159, Exercises.ParseNum("3.14159"));
         }
+
         [Test]
         public void GivenAnInvalidDoubleString_ParseNum_ReturnsMinus999()
         {
@@ -35,6 +38,7 @@ namespace ArraysAndStringsTests
         [TestCase("  Cathy", 10, "CATHY0123456789")]
         [TestCase("", 4, "0123")]
         [TestCase(" Piano  ", 12, "PIANO01234567891011")]
+        [TestCase("   ashib ", 5, "ASHIB01234")]
         public void GivenAString_ManipulateString_ReturnsATransformedString(string original, int num, string expected)
         {
             var result = Exercises.ManipulateString(original, num);
