@@ -11,6 +11,7 @@ namespace CollectionsExercisesTests
             var result = ListExercises.MakeFiveList(n);
             Assert.AreEqual(0, result.Count);
         }
+
         [TestCase(1)]
         [TestCase(2)]
         [TestCase(4)]
