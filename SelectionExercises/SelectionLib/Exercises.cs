@@ -7,7 +7,7 @@ namespace SelectionExercisesLib
         // implement this method so that it returns true if num is even, otherwise false
         public static bool EvenOdd(int num)
         {
-            return false;
+            return (num % 2 == 0);
         }
 
         // returns the type of ticket a customer is eligible for based on their age
@@ -19,7 +19,33 @@ namespace SelectionExercisesLib
         // Throw an ArgumentException if age is less than 0
         public static string TicketType(int age)
         {
-            return string.Empty;
+            string ticketType = "";
+            if (age >= 60)
+            {
+                ticketType = "OAP";
+            }
+            else if (age >= 18 && age <= 59)
+            {
+                ticketType = "Standard";
+            }
+            else if (age >= 13 && age <= 17)
+            {
+                ticketType = "Student";
+            }
+            else if (age >= 5 && age <= 12)
+            {
+                ticketType = "Child";
+            }
+            else if (age < 5 && age >= 0)
+            {
+                ticketType = "Free";
+            }
+            else
+            {
+                throw new ArgumentException();
+            }
+
+                return ticketType;
         }
     }
 }
