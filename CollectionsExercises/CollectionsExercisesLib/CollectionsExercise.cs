@@ -30,19 +30,15 @@ namespace CollectionsExercisesLib
         public static int[] Reverse(int[] original)
         {
             Stack<int> stack = new Stack<int>();
-
             for (int i = 0; i < original.Length; i++)
             {
                 stack.Push(original[i]);
             }
-
             int[] outputArray = new int[original.Length];
-
             for (int i = 0; i < original.Length; i++)
             {
                 outputArray[i] = stack.Pop();
-            }
-            
+            }            
             return outputArray;
         }
         // using a Dictionary, counts and returns (as a string) the occurence of the digits 0-9 in the given string
