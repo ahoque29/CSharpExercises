@@ -11,11 +11,11 @@ namespace IterationLib
             if (nums.Length != 0)
             {
                 lowestNumber = nums[0];
-                for (int i = 1; i < nums.Length; i++)
+                foreach (int i in nums)
                 {
-                    if (lowestNumber > nums[i])
+                    if (lowestNumber > i)
                     {
-                        lowestNumber = nums[i];
+                        lowestNumber = i;
                     }
                 }
             }                       
@@ -47,16 +47,16 @@ namespace IterationLib
                 switch (character)
                 {
                     case 'A':
-                        numberOfA += 1;
+                        numberOfA++;
                         break;
                     case 'B':
-                        numberOfB += 1;
+                        numberOfB++;
                         break;
                     case 'C':
-                        numberOfC += 1;
+                        numberOfC++;
                         break;
                     case 'D':
-                        numberOfD += 1;
+                        numberOfD++;
                         break;
                 }
             }

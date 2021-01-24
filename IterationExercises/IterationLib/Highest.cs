@@ -7,7 +7,7 @@ namespace IterationLib
         public static int HighestWhileLoop(int[] nums)
         {
             // this method should use a while loop
-            int i = 0;
+            int i = 1;
             int highestNumber = nums[0];
             while (i < nums.Length)
             {

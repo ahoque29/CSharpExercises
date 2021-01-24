@@ -38,20 +38,33 @@ namespace CalculatorTests
 		[TestCase(-8, 2, -4)]
 		[TestCase(-4, -2, 2)]
 		[TestCase(20, -10, -2)]
-		[TestCase(23, 0, 0)]
-		public void DivisionIsCorrect(int a, int b, int expectedResult)
+		public void DivisionIsCorrect_GivenSecondArgumentIsNotZero(int a, int b, int expectedResult)
 		{
 			var result = Program.Divide(a, b);
 			Assert.AreEqual(expectedResult, result);
 		}
 
+		[TestCase(5, 0)]
+		[TestCase(-2, 0)]
+		public void DivisionReturnsException_GivenSecondArgumentIsZero(int a, int b)
+		{
+			var ex = Assert.Throws<System.DivideByZeroException>(() => Program.Divide(a, b));
+		}
+
 		[TestCase(3, 2, 1)]
 		[TestCase(-9, 4, -1)]
-		[TestCase(3, 0, -999)]
-		public void ModulusIsCorrect(int a, int b, int expectedResult)
+		public void ModulusIsCorrect_GivenSecondArgumentIsNotZero(int a, int b, int expectedResult)
 		{
 			var result = Program.Modulus(a, b);
 			Assert.AreEqual(expectedResult, result);
 		}
+
+		[TestCase(9, 0)]
+		[TestCase(-16, 0)]
+		public void ModulusReturnsException_GivenSecondArgumentIsZero(int a, int b)
+		{
+			var ex = Assert.Throws<System.DivideByZeroException>(() => Program.Modulus(a, b));
+		}
+
 	}
 }
