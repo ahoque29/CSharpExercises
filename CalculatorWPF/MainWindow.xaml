@@ -44,8 +44,5 @@
 		<Button x:Name="MultiplyButton" Grid.Row="3" Grid.Column="3" Background="#FF3EA816" Content="Multiplication" Click="MultiplyButton_Click"/>
 		<Button x:Name="DivideButton" Grid.Row="3" Grid.Column="5" Background="#FF3EA816" Content="Division" Click="DivideButton_Click"/>
 		<Button x:Name="ModulusButton" Grid.Row="5" Grid.Column="4" Background="#FF3EA816" Content="Modulus" Click="ModulusButton_Click"/>
-		
-
-
 	</Grid>
 </Window>
