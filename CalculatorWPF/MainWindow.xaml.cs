@@ -54,6 +54,7 @@ namespace CalculatorWPF
 				}
 				catch (DivideByZeroException)
 				{
+					OutputText.Content = "";
 					Output.Content = "Division by 0!";
 				}
 			}
@@ -71,6 +72,7 @@ namespace CalculatorWPF
 				}
 				catch (DivideByZeroException)
 				{
+					OutputText.Content = "";
 					Output.Content = "Division by 0!";
 				}
 			}
