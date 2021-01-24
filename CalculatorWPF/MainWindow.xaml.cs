@@ -1,18 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using CalculatorTests;
 
 namespace CalculatorWPF
 {
@@ -32,6 +19,60 @@ namespace CalculatorWPF
 			{
 				var result = CalculatorTests.Program.Add(x, y);
 				Output.Content = result;
+				OutputText.Content = "x + y = ";
+			}
+		}
+		private void SubButton_Click(object sender, RoutedEventArgs e)
+		{
+			if (Int32.TryParse(FirstArgument.Text, out int x) && Int32.TryParse(SecondArgument.Text, out int y))
+			{
+				var result = CalculatorTests.Program.Subtract(x, y);
+				Output.Content = result;
+				OutputText.Content = "x - y = ";
+			}
+		}
+
+		private void MultiplyButton_Click(object sender, RoutedEventArgs e)
+		{
+			if (Int32.TryParse(FirstArgument.Text, out int x) && Int32.TryParse(SecondArgument.Text, out int y))
+			{
+				var result = CalculatorTests.Program.Multiply(x, y);
+				Output.Content = result;
+				OutputText.Content = "x * y = ";
+			}
+		}
+
+		private void DivideButton_Click(object sender, RoutedEventArgs e)
+		{
+			if (Int32.TryParse(FirstArgument.Text, out int x) && Int32.TryParse(SecondArgument.Text, out int y))
+			{
+				try
+				{
+					var result = CalculatorTests.Program.Divide(x, y);
+					Output.Content = result;
+					OutputText.Content = "x / y = ";
+				}
+				catch (DivideByZeroException)
+				{
+					Output.Content = "Division by 0!";
+				}
+			}
+		}
+
+		private void ModulusButton_Click(object sender, RoutedEventArgs e)
+		{
+			if (Int32.TryParse(FirstArgument.Text, out int x) && Int32.TryParse(SecondArgument.Text, out int y))
+			{
+				try
+				{
+					var result = CalculatorTests.Program.Modulus(x, y);
+					Output.Content = result;
+					OutputText.Content = "x % y = ";
+				}
+				catch (DivideByZeroException)
+				{
+					Output.Content = "Division by 0!";
+				}
 			}
 		}
 	}

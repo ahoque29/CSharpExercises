@@ -7,16 +7,44 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="800">
 	<Grid>
-		<Button x:Name="AddButton" Content="Addition" HorizontalAlignment="Left" Margin="600,0,0,0" VerticalAlignment="Center" Click="AddButton_Click"/>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+			<!--setting the height of the 2nd row so it's twice the size of the other rows-->
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
 
-		<TextBox x:Name="FirstArgument" HorizontalAlignment="Left" Margin="200,100,0,0" Text="FirstArgument" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-		<TextBox x:Name="SecondArgument" HorizontalAlignment="Left" Margin="200,150,0,0" Text="SecondArgument" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-		<Label x:Name="Output" Content="" HorizontalAlignment="Left" Margin="241,192,0,0" VerticalAlignment="Top"/>
+		<Label x:Name="NameInputLabel" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" FontSize="24">Simple Integer Calculator</Label>
+		
+		<Label x:Name="x" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" FontSize="24" HorizontalAlignment="Center">x</Label>
+		<Label x:Name="y" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="1" FontSize="24" HorizontalAlignment="Center">y</Label>
+		
+		<Label x:Name="Output" Content="" Grid.Row="5" Grid.Column="1" FontSize="24" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
+		
 
+		<TextBox x:Name="FirstArgument" Grid.Row="2" Grid.Column= "1" Background="LightBlue" VerticalAlignment="Center" ></TextBox>
+		<TextBox x:Name="SecondArgument" Grid.Row="3" Grid.Column= "1" Background="LightYellow" VerticalAlignment="Center"></TextBox>
+		<Label x:Name="OutputText" Content="" Grid.Row="5" Grid.Column="0" FontSize="24"  HorizontalAlignment="Center"/>
 
-
-
-
+		<Button x:Name="AddButton" Grid.Row="1" Grid.Column="3" Background="#FF3EA816" Content="Addition" Click="AddButton_Click"/>
+		<Button x:Name="SubButton" Grid.Row="1" Grid.Column="5" Background="#FF3EA816" Content="Subtraction" Click="SubButton_Click"/>
+		<Button x:Name="MultiplyButton" Grid.Row="3" Grid.Column="3" Background="#FF3EA816" Content="Multiplication" Click="MultiplyButton_Click"/>
+		<Button x:Name="DivideButton" Grid.Row="3" Grid.Column="5" Background="#FF3EA816" Content="Division" Click="DivideButton_Click"/>
+		<Button x:Name="ModulusButton" Grid.Row="5" Grid.Column="4" Background="#FF3EA816" Content="Modulus" Click="ModulusButton_Click"/>
+		
 
 
 	</Grid>
