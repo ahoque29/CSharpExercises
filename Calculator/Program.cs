@@ -46,7 +46,18 @@ namespace CalculatorTests
 
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			try
+			{
+				
+			}
+			catch (DivideByZeroException e)
+			{
+				Console.WriteLine(e.Message);
+			}
+			catch (Exception)
+			{
+				Console.WriteLine("Unhandled exception.");
+			}
 		}
 	}
 }
