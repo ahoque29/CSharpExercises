@@ -31,9 +31,8 @@
 		
 		<Label x:Name="x" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" FontSize="24" HorizontalAlignment="Center">x</Label>
 		<Label x:Name="y" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="1" FontSize="24" HorizontalAlignment="Center">y</Label>
-		
+
 		<Label x:Name="Output" Content="" Grid.Row="5" Grid.Column="1" FontSize="24" Grid.ColumnSpan="2" HorizontalAlignment="Center"/>
-		
 
 		<TextBox x:Name="FirstArgument" Grid.Row="2" Grid.Column= "1" Background="LightBlue" VerticalAlignment="Center" ></TextBox>
 		<TextBox x:Name="SecondArgument" Grid.Row="3" Grid.Column= "1" Background="LightYellow" VerticalAlignment="Center"></TextBox>
