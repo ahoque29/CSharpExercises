@@ -12,33 +12,59 @@ namespace CalculatorWPF
 		{
 			InitializeComponent();
 		}
-
+		
 		private void AddButton_Click(object sender, RoutedEventArgs e)
 		{
-			if (Double.TryParse(FirstArgument.Text, out double x) && Double.TryParse(SecondArgument.Text, out double y))
+			try
 			{
-				var result = CalculatorTests.Program.Add(x, y);
-				Output.Content = result;
-				OutputText.Content = "x + y = ";
+				if (Double.TryParse(FirstArgument.Text, out double x) && Double.TryParse(SecondArgument.Text, out double y))
+				{
+					var result = CalculatorTests.Program.Add(x, y);
+					Output.Content = result;
+					OutputText.Content = "x + y = ";
+				}
+			}
+			catch (OverflowException)
+			{
+				OutputText.Content = "";
+				Output.Content = "Overflow!";
 			}
 		}
+
 		private void SubButton_Click(object sender, RoutedEventArgs e)
 		{
-			if (Double.TryParse(FirstArgument.Text, out double x) && Double.TryParse(SecondArgument.Text, out double y))
+			try
 			{
-				var result = CalculatorTests.Program.Subtract(x, y);
-				Output.Content = result;
-				OutputText.Content = "x - y = ";
+				if (Double.TryParse(FirstArgument.Text, out double x) && Double.TryParse(SecondArgument.Text, out double y))
+				{
+					var result = CalculatorTests.Program.Subtract(x, y);
+					Output.Content = result;
+					OutputText.Content = "x - y = ";
+				}
+			}
+			catch(OverflowException)
+			{
+				OutputText.Content = "";
+				Output.Content = "Overflow!";
 			}
 		}
 
 		private void MultiplyButton_Click(object sender, RoutedEventArgs e)
 		{
-			if (Double.TryParse(FirstArgument.Text, out double x) && Double.TryParse(SecondArgument.Text, out double y))
+			try
 			{
-				var result = CalculatorTests.Program.Multiply(x, y);
-				Output.Content = result;
-				OutputText.Content = "x * y = ";
+				if (Double.TryParse(FirstArgument.Text, out double x) && Double.TryParse(SecondArgument.Text, out double y))
+				{
+					var result = CalculatorTests.Program.Multiply(x, y);
+					Output.Content = result;
+					OutputText.Content = "x * y = ";
+				}
+
+			}
+			catch (OverflowException)
+			{
+				OutputText.Content = "";
+				Output.Content = "Overflow!";
 			}
 		}
 
@@ -56,6 +82,11 @@ namespace CalculatorWPF
 				{
 					OutputText.Content = "";
 					Output.Content = "Division by 0!";
+				}
+				catch (OverflowException)
+				{
+					OutputText.Content = "";
+					Output.Content = "Overflow!";
 				}
 			}
 		}
@@ -75,6 +106,11 @@ namespace CalculatorWPF
 					OutputText.Content = "";
 					Output.Content = "Division by 0!";
 				}
+				catch (OverflowException)
+				{
+					OutputText.Content = "";
+					Output.Content = "Overflow!";
+				}
 			}
 		}
 
@@ -91,7 +127,12 @@ namespace CalculatorWPF
 				catch (ArgumentException)
 				{
 					OutputText.Content = "";
-					Output.Content = "0^0 is Undefined!";
+					Output.Content = "0^0 is undefined!";
+				}
+				catch (OverflowException)
+				{
+					OutputText.Content = "";
+					Output.Content = "Overflow!";
 				}
 			}
 		}

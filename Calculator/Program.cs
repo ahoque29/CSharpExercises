@@ -6,17 +6,32 @@ namespace CalculatorTests
 	{
 		public static double Add(double x, double y)
 		{
-			return Math.Round(x + y, 3);
+			double addOutput = x + y;
+			if (addOutput > 999999)
+			{
+				throw new OverflowException();
+			}
+			return Math.Round(addOutput, 3);
 		}
 
 		public static double Subtract(double x, double y)
 		{
-			return Math.Round(x - y, 3);
+			double subOutput = x - y;
+			if (subOutput > 999999)
+			{
+				throw new OverflowException();
+			}
+			return Math.Round(subOutput, 3);
 		}
 
 		public static double Multiply(double x, double y)
 		{
-			return Math.Round(x * y, 3);
+			double multiplyOutput = x * y;
+			if (multiplyOutput > 999999)
+			{
+				throw new OverflowException();
+			}
+			return Math.Round(multiplyOutput, 3);
 		}
 
 		public static double Divide(double x, double y)
@@ -25,8 +40,12 @@ namespace CalculatorTests
 			{
 				throw new DivideByZeroException();
 			}
-			
-			return Math.Round(x / y, 3);
+			double divideOutput = x / y;
+			if (divideOutput > 999999)
+			{
+				throw new OverflowException();
+			}
+			return Math.Round(divideOutput, 3);
 		}
 
 		public static double Modulus(int x, int y)
@@ -35,9 +54,12 @@ namespace CalculatorTests
 			{
 				throw new DivideByZeroException();
 			}
-			
-			return x % y;
-
+			int modulusOutput = x % y;
+			if (modulusOutput > 999999)
+			{
+				throw new OverflowException();
+			}
+			return modulusOutput;
 		}
 
 		public static double Exponent(double x, double y)
@@ -46,8 +68,14 @@ namespace CalculatorTests
 			{
 				throw new ArgumentException();
 			}
-			
-			return Math.Round(Math.Pow(x, y), 3);
+
+			double exponentOutput = Math.Pow(x, y);
+			if (exponentOutput > 999999)
+			{
+				throw new OverflowException();
+			}
+
+			return Math.Round(exponentOutput, 3);
 		}
 
 		static void Main(string[] args)
