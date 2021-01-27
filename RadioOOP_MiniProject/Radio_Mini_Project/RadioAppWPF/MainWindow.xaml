@@ -6,7 +6,70 @@
         xmlns:local="clr-namespace:RadioAppWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="2*"/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
 
-    </Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="0.5*"/>
+			<ColumnDefinition Width="0.5*"/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+
+		<Label x:Name="RadioOutput" 
+			   Content="RadioOutput" 
+			   Grid.Row="0" 
+			   Grid.Column="0" FontSize="30" 
+			   Grid.ColumnSpan="10" 
+			   HorizontalAlignment="Center"
+			   VerticalAlignment="Center"/>
+
+		<RadioButton x:Name="OnButton"
+					 Margin="12.5,0,0,0"
+					 Grid.Row="3" 
+					 HorizontalContentAlignment="Center"
+					 VerticalContentAlignment="Center" 
+					 Height="40"
+					 GroupName="OnOff" Grid.Column="1" Grid.RowSpan="3"/>
+		<RadioButton x:Name="OffButton"
+					 Margin="12.5,0,0,0"
+					 Grid.Column="2"
+					 Grid.Row="4"
+					 HorizontalContentAlignment="Center"					 
+					 VerticalContentAlignment="Center"					 					
+					 Height="40"
+					 Width="80"					 
+					 GroupName="OnOff"/>
+		<TextBlock HorizontalAlignment="Center"
+				   Grid.Row="4" 
+				   Grid.Column="0"
+				   Text="I"
+				   FontSize="24"
+				   TextWrapping="Wrap" 
+				   VerticalAlignment="Center"/>
+		<TextBlock HorizontalAlignment="Center"
+				   Grid.Row="4" 
+				   Grid.Column="3"
+				   Text="O" 
+				   TextWrapping="Wrap" 
+				   VerticalAlignment="Center"
+				   FontSize="24"/>
+	</Grid>
 </Window>
