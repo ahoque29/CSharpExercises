@@ -4,44 +4,50 @@ namespace CalculatorTests
 {
 	public class Program
 	{
-		public static int Add(int x, int y)
+		public static double Add(double x, double y)
 		{
-			return x + y;
+			return Math.Round(x + y, 3);
 		}
 
-		public static int Subtract(int x, int y)
+		public static double Subtract(double x, double y)
 		{
-			return x - y;
+			return Math.Round(x - y, 3);
 		}
 
-		public static int Multiply(int x, int y)
+		public static double Multiply(double x, double y)
 		{
-			return x * y;
+			return Math.Round(x * y, 3);
 		}
 
-		public static int Divide(int x, int y)
+		public static double Divide(double x, double y)
 		{
 			if (y == 0)
 			{
 				throw new DivideByZeroException();
 			}
-			else
-			{
-				return x / y;
-			}
+			
+			return Math.Round(x / y, 3);
 		}
 
-		public static int Modulus(int x, int y)
+		public static double Modulus(int x, int y)
 		{
 			if (y == 0)
 			{
 				throw new DivideByZeroException();
 			}
-			else
-			{
-				return x % y;
-			}
+			
+			return x % y;
 
+		}
+
+		public static double Exponent(double x, double y)
+		{
+			if (x == 0 && y == 0)
+			{
+				throw new ArgumentException();
+			}
+			
+			return Math.Round(Math.Pow(x, y), 3);
 		}
 
 		static void Main(string[] args)

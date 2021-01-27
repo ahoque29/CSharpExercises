@@ -27,7 +27,7 @@
 			<ColumnDefinition/>
 		</Grid.ColumnDefinitions>
 
-		<Label x:Name="NameInputLabel" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" FontSize="24">Simple Integer Calculator</Label>
+		<Label x:Name="NameInputLabel" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Center" FontSize="24">Simple Calculator</Label>
 		
 		<Label x:Name="x" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" FontSize="24" HorizontalAlignment="Center">x</Label>
 		<Label x:Name="y" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="1" FontSize="24" HorizontalAlignment="Center">y</Label>
@@ -42,6 +42,7 @@
 		<Button x:Name="SubButton" Grid.Row="1" Grid.Column="5" Background="#FF3EA816" Content="Subtraction" Click="SubButton_Click"/>
 		<Button x:Name="MultiplyButton" Grid.Row="3" Grid.Column="3" Background="#FF3EA816" Content="Multiplication" Click="MultiplyButton_Click"/>
 		<Button x:Name="DivideButton" Grid.Row="3" Grid.Column="5" Background="#FF3EA816" Content="Division" Click="DivideButton_Click"/>
-		<Button x:Name="ModulusButton" Grid.Row="5" Grid.Column="4" Background="#FF3EA816" Content="Modulus" Click="ModulusButton_Click"/>
+		<Button x:Name="ExponentButton" Grid.Row="5" Grid.Column="3" Background="#FF3EA816" Content="Exponent" Click="ExponentButton_Click"/>
+		<Button x:Name="ModulusButton" Grid.Row="5" Grid.Column="5" Background="#FF3EA816" Content="Modulus" Click="ModulusButton_Click"/>
 	</Grid>
 </Window>
