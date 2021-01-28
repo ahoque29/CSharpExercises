@@ -34,29 +34,36 @@
 		</Grid.ColumnDefinitions>
 
 		<Label x:Name="RadioOutput" 
-			   Content="RadioOutput" 
+			   Content="Radio is off" 
 			   Grid.Row="0" 
-			   Grid.Column="0" FontSize="30" 
+			   Grid.Column="0" 
+			   FontSize="30" 
 			   Grid.ColumnSpan="10" 
 			   HorizontalAlignment="Center"
 			   VerticalAlignment="Center"/>
 
-		<RadioButton x:Name="OnButton"
+		<RadioButton x:Name="On_RadioButton"
 					 Margin="12.5,0,0,0"
 					 Grid.Row="3" 
+					 Grid.Column="1"
 					 HorizontalContentAlignment="Center"
 					 VerticalContentAlignment="Center" 
 					 Height="40"
-					 GroupName="OnOff" Grid.Column="1" Grid.RowSpan="3"/>
-		<RadioButton x:Name="OffButton"
+					 GroupName="OnOff"					  
+					 Grid.RowSpan="3" 
+					 Checked="On_RadioButton_Checked"/>
+		<RadioButton x:Name="Off_RadioButton"
 					 Margin="12.5,0,0,0"
-					 Grid.Column="2"
 					 Grid.Row="4"
+					 Grid.Column="2"					 
 					 HorizontalContentAlignment="Center"					 
 					 VerticalContentAlignment="Center"					 					
-					 Height="40"
-					 Width="80"					 
-					 GroupName="OnOff"/>
+					 Height="40"					 				 
+					 GroupName="OnOff"
+					 Checked="Off_RadioButton_Checked"
+					 IsChecked="True"
+					 />
+		
 		<TextBlock HorizontalAlignment="Center"
 				   Grid.Row="4" 
 				   Grid.Column="0"
@@ -71,5 +78,34 @@
 				   TextWrapping="Wrap" 
 				   VerticalAlignment="Center"
 				   FontSize="24"/>
+
+		<TextBlock Text="Channel List"
+				   HorizontalAlignment="Center"
+				   Grid.Column="5"
+				   Grid.Row="2" 				   				   
+				   VerticalAlignment="Center"
+				   FontSize="22"
+				   Grid.ColumnSpan="3"/>
+
+		<Button x:Name="Channel1_Button"
+				Grid.Row="3"
+				Grid.Column="6"
+				Content="Channel 1"
+				Click="Channel1_Button_Click"/>
+		<Button x:Name="Channel2_Button"
+				Grid.Row="4"
+				Grid.Column="6"
+				Content="Channel 2"
+				Click="Channel2_Button_Click"/>
+		<Button x:Name="Channel3_Button"
+				Grid.Row="5"
+				Grid.Column="6"
+				Content="Channel 3"
+				Click="Channel3_Button_Click"/>
+		<Button x:Name="Channel4_Button"
+				Grid.Row="6"
+				Grid.Column="6"
+				Content="Channel 4"
+				Click="Channel4_Button_Click"/>
 	</Grid>
 </Window>

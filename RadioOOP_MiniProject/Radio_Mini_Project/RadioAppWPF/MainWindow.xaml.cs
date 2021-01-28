@@ -21,9 +21,45 @@ namespace RadioAppWPF
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		Radio radio = new Radio();
 		public MainWindow()
 		{
 			InitializeComponent();
+		}
+
+		private void On_RadioButton_Checked(object sender, RoutedEventArgs e)
+		{
+			radio.TurnOn();
+			RadioOutput.Content = radio.Play();
+		}
+		private void Off_RadioButton_Checked(object sender, RoutedEventArgs e)
+		{
+			radio.TurnOff();
+			RadioOutput.Content = radio.Play();
+		}
+
+		private void Channel1_Button_Click(object sender, RoutedEventArgs e)
+		{
+			radio.Channel = 1;
+			RadioOutput.Content = radio.Play();
+		}
+
+		private void Channel2_Button_Click(object sender, RoutedEventArgs e)
+		{
+			radio.Channel = 2;
+			RadioOutput.Content = radio.Play();
+		}
+
+		private void Channel3_Button_Click(object sender, RoutedEventArgs e)
+		{
+			radio.Channel = 3;
+			RadioOutput.Content = radio.Play();
+		}
+
+		private void Channel4_Button_Click(object sender, RoutedEventArgs e)
+		{
+			radio.Channel = 4;
+			RadioOutput.Content = radio.Play();
 		}
 	}
 }
