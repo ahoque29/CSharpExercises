@@ -3,7 +3,8 @@
     public class Radio
     {
         private int _channel = 1;
-        private bool _on = false;
+        private bool _on;
+        private int _volume = 3;
 
         public int Channel
         {
@@ -20,6 +21,21 @@
 			}
         }
 
+        public int Volume
+        {
+            get
+            {
+                return _volume;
+            }
+            set
+            {
+                if (_on && value >= 0 && value < 6)
+                {
+                    _volume = value;
+                }
+            }
+        }
+
         public void TurnOn()
         {
             _on = true;
@@ -28,6 +44,16 @@
         public void TurnOff()
         {
             _on = false;
+        }
+
+        public void VolumeUp()
+        {
+            Volume++;
+        }
+
+        public void VolumeDown()
+        {
+            Volume--;
         }
 
         public string Play()
@@ -39,6 +65,4 @@
             return $"Playing channel {Channel}";
         }
     }
-    // implement a class Radio that corresponds to the Class diagram 
-    //   and specification in the Radio_Mini_Project document
 }

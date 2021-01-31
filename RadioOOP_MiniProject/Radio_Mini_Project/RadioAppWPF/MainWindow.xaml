@@ -37,7 +37,7 @@
 			   Content="Radio is off" 
 			   Grid.Row="0" 
 			   Grid.Column="0" 
-			   FontSize="30" 
+			   FontSize="30"
 			   Grid.ColumnSpan="10" 
 			   HorizontalAlignment="Center"
 			   VerticalAlignment="Center"/>
@@ -61,8 +61,7 @@
 					 Height="40"					 				 
 					 GroupName="OnOff"
 					 Checked="Off_RadioButton_Checked"
-					 IsChecked="True"
-					 />
+					 IsChecked="True"/>
 		
 		<TextBlock HorizontalAlignment="Center"
 				   Grid.Row="4" 
