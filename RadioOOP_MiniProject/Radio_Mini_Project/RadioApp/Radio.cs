@@ -3,7 +3,7 @@
     public class Radio
     {
         private int _channel = 1;
-        private bool _on;
+        public bool _on;
         private int _volume = 3;
 
         public int Channel

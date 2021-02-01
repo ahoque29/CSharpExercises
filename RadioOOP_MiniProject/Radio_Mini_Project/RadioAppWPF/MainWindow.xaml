@@ -5,106 +5,223 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RadioAppWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="2*"/>
-			<RowDefinition/>
-			<RowDefinition/>
-			<RowDefinition/>
-			<RowDefinition/>
-			<RowDefinition/>
-			<RowDefinition/>
-			<RowDefinition/>
-			<RowDefinition/>
-			<RowDefinition/>
-		</Grid.RowDefinitions>
+		DataContext="{Binding RelativeSource={RelativeSource self}}"
+        Title="Radio" Height="720" Width="400">
 
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition/>
-			<ColumnDefinition Width="0.5*"/>
-			<ColumnDefinition Width="0.5*"/>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-			<ColumnDefinition/>
-		</Grid.ColumnDefinitions>
+	<Border x:Name="OverallBorder" Padding="10" Background="#eee">
+	    <StackPanel>
+		    
+			<!-- Radio Display -->
+			<TextBlock Text="Now Playing:"
+					   FontSize="20" 
+					   FontWeight="Bold" 
+					   Margin="0 0 0 0"/>
+			<TextBox x:Name="RadioOutput"
+					 IsReadOnly="True"					 
+					 Padding="2"
+					 FontSize="30"
+					 Margin="0 0 0 0"
+					 TextAlignment="Center"/>
+			<Separator Margin="0 10">
+				<Separator.RenderTransform>
+					<ScaleTransform ScaleY="3"/>
+				</Separator.RenderTransform>
+			</Separator>
 
-		<Label x:Name="RadioOutput" 
-			   Content="Radio is off" 
-			   Grid.Row="0" 
-			   Grid.Column="0" 
-			   FontSize="30"
-			   Grid.ColumnSpan="10" 
-			   HorizontalAlignment="Center"
-			   VerticalAlignment="Center"/>
+			<!-- OnOff Buttons -->
+			<Grid>
 
-		<RadioButton x:Name="On_RadioButton"
-					 Margin="12.5,0,0,0"
-					 Grid.Row="3" 
-					 Grid.Column="1"
-					 HorizontalContentAlignment="Center"
-					 VerticalContentAlignment="Center" 
-					 Height="40"
-					 GroupName="OnOff"					  
-					 Grid.RowSpan="3" 
-					 Checked="On_RadioButton_Checked"/>
-		<RadioButton x:Name="Off_RadioButton"
-					 Margin="12.5,0,0,0"
-					 Grid.Row="4"
-					 Grid.Column="2"					 
-					 HorizontalContentAlignment="Center"					 
-					 VerticalContentAlignment="Center"					 					
-					 Height="40"					 				 
-					 GroupName="OnOff"
-					 Checked="Off_RadioButton_Checked"
-					 IsChecked="True"/>
-		
-		<TextBlock HorizontalAlignment="Center"
-				   Grid.Row="4" 
-				   Grid.Column="0"
-				   Text="I"
-				   FontSize="24"
-				   TextWrapping="Wrap" 
-				   VerticalAlignment="Center"/>
-		<TextBlock HorizontalAlignment="Center"
-				   Grid.Row="4" 
-				   Grid.Column="3"
-				   Text="O" 
-				   TextWrapping="Wrap" 
-				   VerticalAlignment="Center"
-				   FontSize="24"/>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
 
-		<TextBlock Text="Channel List"
-				   HorizontalAlignment="Center"
-				   Grid.Column="5"
-				   Grid.Row="2" 				   				   
-				   VerticalAlignment="Center"
-				   FontSize="22"
-				   Grid.ColumnSpan="3"/>
+				<Button x:Name="OnButton"
+						Click="OnOff_Click"
+						Content="ON"
+						Grid.Column="0"
+						Background="LawnGreen"
+						Margin="10 0 10 0"
+						FontSize="20"/>
+				<Button x:Name="OffButton"
+						Click="OnOff_Click"
+						Content="OFF"
+						Grid.Column="1"
+						Background="Orange"
+						Margin="10 0 10 0"
+						FontSize="20"/>
+			</Grid>
+			<Separator Margin="0 10">
+				<Separator.RenderTransform>
+					<ScaleTransform ScaleY="3"/>
+				</Separator.RenderTransform>
+			</Separator>
+			
+			<!-- Channels List -->
+			<TextBlock Text="Channels List:"
+					   FontSize="20"
+					   FontWeight="Bold" 
+					   Margin="0 0 0 0"/>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
 
-		<Button x:Name="Channel1_Button"
-				Grid.Row="3"
-				Grid.Column="6"
-				Content="Channel 1"
-				Click="Channel1_Button_Click"/>
-		<Button x:Name="Channel2_Button"
-				Grid.Row="4"
-				Grid.Column="6"
-				Content="Channel 2"
-				Click="Channel2_Button_Click"/>
-		<Button x:Name="Channel3_Button"
-				Grid.Row="5"
-				Grid.Column="6"
-				Content="Channel 3"
-				Click="Channel3_Button_Click"/>
-		<Button x:Name="Channel4_Button"
-				Grid.Row="6"
-				Grid.Column="6"
-				Content="Channel 4"
-				Click="Channel4_Button_Click"/>
-	</Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+
+				<Button x:Name="Channel1_Button"
+						Click="Channel_Button_Click"
+						Content="Channel 1"
+						Grid.Column="0"
+						Grid.Row="0"
+						Height="50"
+						FontSize="25"
+						FontWeight="Black"
+						Background="OrangeRed"
+						Margin="10 0 10 10"/>
+				<Button x:Name="Channel2_Button"
+						Click="Channel_Button_Click"
+						Content="Channel 2"
+						Grid.Column="1"
+						Grid.Row="0"
+						Height="50"
+						FontSize="25"
+						FontWeight="Black"
+						Background="Purple"
+						Margin="10 0 10 10"/>
+				<Button x:Name="Channel3_Button"
+						Click="Channel_Button_Click"
+						Content="Channel 3"
+						Grid.Column="0"
+						Grid.Row="1"
+						Height="50"
+						FontSize="25"
+						FontWeight="Black"
+						Background="MediumTurquoise"
+						Margin="10 10 10 0"/>
+				<Button x:Name="Channel4_Button"
+						Click="Channel_Button_Click"
+						Content="Channel 4"
+						Grid.Column="1"
+						Grid.Row="1"
+						Height="50"
+						FontSize="25"
+						FontWeight="Black"
+						Background="Yellow"
+						Margin="10 10 10 0"/>
+			</Grid>
+			<Separator Margin="0 10">
+				<Separator.RenderTransform>
+					<ScaleTransform ScaleY="3"/>
+				</Separator.RenderTransform>
+			</Separator>
+			
+			<!-- Volume Bars -->
+			<TextBlock Text="Volume:"
+					   FontSize="20" 
+					   FontWeight="Bold" 
+					   Margin="0 0 0 0"/>
+			<Grid>
+				
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+
+				<TextBlock x:Name="VolumeOutput"
+						   Text=""
+						   FontSize="24"
+						   Height="50"						   
+						   Grid.Column="5"
+						   FontWeight="Black"/>
+			</Grid>
+
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+
+				<Button x:Name="VolumeUp_Button"
+						Click="Volume_Button_Click"
+						Content="+"
+						FontWeight="Black"
+						Grid.Column="0"
+						Background="IndianRed"
+						Margin="10 10 10 0"
+						FontSize="24"/>
+				<Button x:Name="VolumeDown_Button"
+						Click="Volume_Button_Click"
+						Content="-"
+						FontWeight="Black"
+						Grid.Column="1"
+						Background="MediumPurple"
+						Margin="10 10 10 0"
+						FontSize="24"/>
+			</Grid>
+			<Separator Margin="0 10">
+				<Separator.RenderTransform>
+					<ScaleTransform ScaleY="3"/>
+				</Separator.RenderTransform>
+			</Separator>
+
+			<!-- Colour Changer -->
+			<TextBlock Text="Colour Picker"
+					   FontSize="20"
+					   FontWeight="Bold" 
+					   Margin="0 0 0 0"/>
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+
+				<Grid.RowDefinitions>
+					<RowDefinition/>
+					<RowDefinition/>
+				</Grid.RowDefinitions>
+
+				<Button x:Name="eeeColour_Button"
+						Click="Colour_Button_Click"
+						Content=""
+						Grid.Column="0"
+						Grid.Row="0"
+						Height="50"
+						FontSize="25"
+						Background="#eee"
+						Margin="10 0 10 10"/>
+				<Button x:Name="PurpleColour_Button"
+						Click="Colour_Button_Click"
+						Content=""
+						Grid.Column="1"
+						Grid.Row="0"
+						Height="50"
+						FontSize="25"
+						Background="Purple"
+						Margin="10 0 10 10"/>
+				<Button x:Name="TurquoiseColour_Button"
+						Click="Colour_Button_Click"
+						Content=""
+						Grid.Column="0"
+						Grid.Row="1"
+						Height="50"
+						FontSize="25"
+						Background="MediumTurquoise"
+						Margin="10 10 10 0"/>
+				<Button x:Name="YellowColour_Button"
+						Click="Colour_Button_Click"
+						Content=""
+						Grid.Column="1"
+						Grid.Row="1"
+						Height="50"
+						FontSize="25"
+						Background="Yellow"
+						Margin="10 10 10 0"/>
+			</Grid>
+
+		</StackPanel>
+	</Border>
 </Window>

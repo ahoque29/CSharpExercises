@@ -27,39 +27,85 @@ namespace RadioAppWPF
 			InitializeComponent();
 		}
 
-		private void On_RadioButton_Checked(object sender, RoutedEventArgs e)
+		private void OnOff_Click(object sender, RoutedEventArgs e)
 		{
-			radio.TurnOn();
-			RadioOutput.Content = radio.Play();
-		}
-		private void Off_RadioButton_Checked(object sender, RoutedEventArgs e)
-		{
-			radio.TurnOff();
-			RadioOutput.Content = radio.Play();
-		}
-
-		private void Channel1_Button_Click(object sender, RoutedEventArgs e)
-		{
-			radio.Channel = 1;
-			RadioOutput.Content = radio.Play();
-		}
-
-		private void Channel2_Button_Click(object sender, RoutedEventArgs e)
-		{
-			radio.Channel = 2;
-			RadioOutput.Content = radio.Play();
+			switch (((Button)sender).Name)
+			{
+				case "OnButton":
+					radio.TurnOn();
+					VolumeOutput.Text = "";
+					for (int i = 0; i < radio.Volume; i++)
+					{
+						VolumeOutput.Text += "|||||||";
+					}
+					break;
+				case "OffButton":
+					radio.TurnOff();
+					VolumeOutput.Text = "";
+					break;
+			}
+			RadioOutput.Text = radio.Play();
 		}
 
-		private void Channel3_Button_Click(object sender, RoutedEventArgs e)
+		private void Channel_Button_Click(object sender, RoutedEventArgs e)
 		{
-			radio.Channel = 3;
-			RadioOutput.Content = radio.Play();
+			switch (((Button)sender).Name)
+			{
+				case "Channel1_Button":
+					radio.Channel = 1;
+					break;
+				case "Channel2_Button":
+					radio.Channel = 2;
+					break;
+				case "Channel3_Button":
+					radio.Channel = 3;
+					break;
+				case "Channel4_Button":
+					radio.Channel = 4;
+					break;
+			}
+			RadioOutput.Text = radio.Play();
 		}
 
-		private void Channel4_Button_Click(object sender, RoutedEventArgs e)
+		private void Volume_Button_Click(object sender, RoutedEventArgs e)
 		{
-			radio.Channel = 4;
-			RadioOutput.Content = radio.Play();
+			switch (((Button)sender).Name)
+			{
+				case "VolumeUp_Button":
+					radio.VolumeUp();
+					break;
+				case "VolumeDown_Button":
+					radio.VolumeDown();
+					break;
+			}
+
+			if (radio._on)
+			{
+				VolumeOutput.Text = "";
+				for (int i = 0; i < radio.Volume; i++)
+				{
+					VolumeOutput.Text += "|||||||";
+				}
+			}
+		}
+
+		private void Colour_Button_Click(object sender, RoutedEventArgs e)
+		{
+			switch (((Button)sender).Name)
+			{
+				case "eeeColour_Button":
+					OverallBorder.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0xEE, 0xEE, 0xEE));
+					break;
+				case "PurpleColour_Button":
+					OverallBorder.Background = Brushes.Purple;
+					break;
+				case "TurquoiseColour_Button":
+					OverallBorder.Background = Brushes.MediumTurquoise;
+					break;
+				case "YellowColour_Button":
+					OverallBorder.Background = Brushes.Yellow;
+					break;
+			}
 		}
 	}
 }
