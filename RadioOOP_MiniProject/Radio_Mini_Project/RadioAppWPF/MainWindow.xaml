@@ -5,12 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RadioAppWPF"
         mc:Ignorable="d"
-		DataContext="{Binding RelativeSource={RelativeSource self}}"
-        Title="Radio" Height="720" Width="400">
+		Loaded="Window_Loaded"
+        Title="Radio" Height="580" Width="400">
 
-	<Border x:Name="OverallBorder" Padding="10" Background="#eee">
-	    <StackPanel>
-		    
+	<Border x:Name="OverallBorder" 
+			Padding="10" 
+			Background="#d3d3d3">
+
+		<StackPanel>
+			<Separator Margin="0 10"
+					   Background="Black">
+				<Separator.RenderTransform>
+					<ScaleTransform ScaleY="5"/>
+				</Separator.RenderTransform>
+			</Separator>
+
 			<!-- Radio Display -->
 			<TextBlock Text="Now Playing:"
 					   FontSize="20" 
@@ -22,9 +31,10 @@
 					 FontSize="30"
 					 Margin="0 0 0 0"
 					 TextAlignment="Center"/>
-			<Separator Margin="0 10">
+			<Separator Margin="0 10"
+					   Background="Black">
 				<Separator.RenderTransform>
-					<ScaleTransform ScaleY="3"/>
+					<ScaleTransform ScaleY="5"/>
 				</Separator.RenderTransform>
 			</Separator>
 
@@ -51,17 +61,18 @@
 						Margin="10 0 10 0"
 						FontSize="20"/>
 			</Grid>
-			<Separator Margin="0 10">
+			<Separator Margin="0 10"
+					   Background="Black">
 				<Separator.RenderTransform>
-					<ScaleTransform ScaleY="3"/>
+					<ScaleTransform ScaleY="5"/>
 				</Separator.RenderTransform>
 			</Separator>
-			
+
 			<!-- Channels List -->
 			<TextBlock Text="Channels List:"
 					   FontSize="20"
 					   FontWeight="Bold" 
-					   Margin="0 0 0 0"/>
+					   Margin="0 0 0 10"/>
 			<Grid>
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition/>
@@ -91,7 +102,7 @@
 						Height="50"
 						FontSize="25"
 						FontWeight="Black"
-						Background="Purple"
+						Background="BlueViolet"
 						Margin="10 0 10 10"/>
 				<Button x:Name="Channel3_Button"
 						Click="Channel_Button_Click"
@@ -114,29 +125,36 @@
 						Background="Yellow"
 						Margin="10 10 10 0"/>
 			</Grid>
-			<Separator Margin="0 10">
+			<Separator Margin="0 10"
+					   Background="Black">
 				<Separator.RenderTransform>
-					<ScaleTransform ScaleY="3"/>
+					<ScaleTransform ScaleY="5"/>
 				</Separator.RenderTransform>
 			</Separator>
-			
+
 			<!-- Volume Bars -->
 			<TextBlock Text="Volume:"
 					   FontSize="20" 
 					   FontWeight="Bold" 
 					   Margin="0 0 0 0"/>
 			<Grid>
-				
+
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition/>
 				</Grid.ColumnDefinitions>
 
-				<TextBlock x:Name="VolumeOutput"
-						   Text=""
-						   FontSize="24"
-						   Height="50"						   
-						   Grid.Column="5"
-						   FontWeight="Black"/>
+				<Border Background="DarkGray"
+						Margin="10"
+						Padding="0 10 0 0">
+					<TextBlock x:Name="VolumeOutput"
+							   Text=""
+							   FontSize="24"
+							   Height="50"
+							   Grid.Column="5"
+							   FontWeight="Black"
+							   />
+
+				</Border>
 			</Grid>
 
 			<Grid>
@@ -162,66 +180,12 @@
 						Margin="10 10 10 0"
 						FontSize="24"/>
 			</Grid>
-			<Separator Margin="0 10">
+			<Separator Margin="0 10"
+					   Background="Black">
 				<Separator.RenderTransform>
-					<ScaleTransform ScaleY="3"/>
+					<ScaleTransform ScaleY="5"/>
 				</Separator.RenderTransform>
 			</Separator>
-
-			<!-- Colour Changer -->
-			<TextBlock Text="Colour Picker"
-					   FontSize="20"
-					   FontWeight="Bold" 
-					   Margin="0 0 0 0"/>
-			<Grid>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition/>
-					<ColumnDefinition/>
-				</Grid.ColumnDefinitions>
-
-				<Grid.RowDefinitions>
-					<RowDefinition/>
-					<RowDefinition/>
-				</Grid.RowDefinitions>
-
-				<Button x:Name="eeeColour_Button"
-						Click="Colour_Button_Click"
-						Content=""
-						Grid.Column="0"
-						Grid.Row="0"
-						Height="50"
-						FontSize="25"
-						Background="#eee"
-						Margin="10 0 10 10"/>
-				<Button x:Name="PurpleColour_Button"
-						Click="Colour_Button_Click"
-						Content=""
-						Grid.Column="1"
-						Grid.Row="0"
-						Height="50"
-						FontSize="25"
-						Background="Purple"
-						Margin="10 0 10 10"/>
-				<Button x:Name="TurquoiseColour_Button"
-						Click="Colour_Button_Click"
-						Content=""
-						Grid.Column="0"
-						Grid.Row="1"
-						Height="50"
-						FontSize="25"
-						Background="MediumTurquoise"
-						Margin="10 10 10 0"/>
-				<Button x:Name="YellowColour_Button"
-						Click="Colour_Button_Click"
-						Content=""
-						Grid.Column="1"
-						Grid.Row="1"
-						Height="50"
-						FontSize="25"
-						Background="Yellow"
-						Margin="10 10 10 0"/>
-			</Grid>
-
 		</StackPanel>
 	</Border>
 </Window>
