@@ -10,7 +10,7 @@ namespace RadioAppWPF
 
 	public partial class MainWindow : Window
 	{
-		#region Contructor and Loading
+		#region Contructors and Loading
 
 		Radio radio = new Radio();
 		MediaPlayer mediaPlayer = new MediaPlayer() { Volume = 0.6 };
