@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CSharpDatabase.Customer">
+    <Position X="0.5" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAEAQAAAgAAACAAMIAAgAAAAAAIAABACAAACIAAEAAA=</HashCode>
+      <FileName>Customer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Orders" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CSharpDatabase.Order">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <AssociationLine Name="Customer" Type="CSharpDatabase.Customer">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.898" Y="0.152" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>GAEAAABAAAAIAAAAABAAICABCAAEAhBAAAAEAAACACA=</HashCode>
+      <FileName>Order.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Customer" />
+      <Property Name="Employee" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="OrderDetails" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CSharpDatabase.OrderDetail">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAECAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAgAAAAAA=</HashCode>
+      <FileName>OrderDetail.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Order" />
+      <Property Name="Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CSharpDatabase.Product">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MEAAAAAAAAAAAoAAABAAQAAAAAEAAAAAAAAAAAgoCAA=</HashCode>
+      <FileName>Product.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Category" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CSharpDatabase.Employee">
+    <Position X="3.25" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAEgAEAAoAAAAGRIIAAAAAQAACIAAYACAIAAAAgCAAg=</HashCode>
+      <FileName>Employee.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Orders" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CSharpDatabase.Category">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAgAgAAAAAAAAAAACAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Category.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Products" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

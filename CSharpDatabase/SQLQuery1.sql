@@ -1,0 +1,1 @@
+﻿SELECT * FROM CUSTOMERS WHERE CITY = 'Paris';
