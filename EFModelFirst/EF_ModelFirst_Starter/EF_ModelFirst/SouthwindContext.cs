@@ -22,8 +22,5 @@ namespace EF_ModelFirst
                 options.UseSqlServer(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = Southwind;");
             }
         }
-
-
-    
-}
+    }
 }
