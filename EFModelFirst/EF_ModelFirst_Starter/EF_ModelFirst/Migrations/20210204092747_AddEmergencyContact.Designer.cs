@@ -4,35 +4,22 @@ using EF_ModelFirst;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EF_ModelFirst.Migrations
 {
     [DbContext(typeof(SouthwindContext))]
-    partial class SouthwindContextModelSnapshot : ModelSnapshot
+    [Migration("20210204092747_AddEmergencyContact")]
+    partial class AddEmergencyContact
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .UseIdentityColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.2");
-
-            modelBuilder.Entity("CustomerEmergencyContact", b =>
-                {
-                    b.Property<string>("CustomersCustomerId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("EmergencyContactsEmergencyContactId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("CustomersCustomerId", "EmergencyContactsEmergencyContactId");
-
-                    b.HasIndex("EmergencyContactsEmergencyContactId");
-
-                    b.ToTable("CustomerEmergencyContact");
-                });
 
             modelBuilder.Entity("EF_ModelFirst.Customer", b =>
                 {
@@ -54,31 +41,6 @@ namespace EF_ModelFirst.Migrations
                     b.HasKey("CustomerId");
 
                     b.ToTable("Customers");
-                });
-
-            modelBuilder.Entity("EF_ModelFirst.EmergencyContact", b =>
-                {
-                    b.Property<string>("EmergencyContactId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ContactName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CustomerId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PostalCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("EmergencyContactId");
-
-                    b.ToTable("EmergencyContact");
                 });
 
             modelBuilder.Entity("EF_ModelFirst.Order", b =>
@@ -131,21 +93,6 @@ namespace EF_ModelFirst.Migrations
                     b.HasIndex("OrderId");
 
                     b.ToTable("OrderDetails");
-                });
-
-            modelBuilder.Entity("CustomerEmergencyContact", b =>
-                {
-                    b.HasOne("EF_ModelFirst.Customer", null)
-                        .WithMany()
-                        .HasForeignKey("CustomersCustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EF_ModelFirst.EmergencyContact", null)
-                        .WithMany()
-                        .HasForeignKey("EmergencyContactsEmergencyContactId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("EF_ModelFirst.Order", b =>

@@ -4,14 +4,16 @@ using EF_ModelFirst;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EF_ModelFirst.Migrations
 {
     [DbContext(typeof(SouthwindContext))]
-    partial class SouthwindContextModelSnapshot : ModelSnapshot
+    [Migration("20210204100253_UpdateEContact2")]
+    partial class UpdateEContact2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

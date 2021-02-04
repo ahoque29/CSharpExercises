@@ -11,6 +11,7 @@ namespace EF_ModelFirst
         public Customer()
         {
             Orders = new HashSet<Order>();
+            EmergencyContacts = new HashSet<EmergencyContact>();
         }
 
         public string CustomerId { get; set; }
@@ -20,5 +21,6 @@ namespace EF_ModelFirst
         public string Country { get; set; }
    
         public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<EmergencyContact> EmergencyContacts { get; set; }
     }
 }
